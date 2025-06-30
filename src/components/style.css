@@ -1,0 +1,499 @@
+/* styles.css */
+
+/* Base Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Book Card Styles */
+.book-card {
+  width: 280px;
+  /* max-height: 800px; */
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.book-image {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-image {
+  transform: scale(1.05);
+}
+
+.book-details {
+  padding: 16px;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px;
+}
+
+.book-author {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 0 0 12px;
+}
+
+.book-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Book List Container */
+.book-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* Updated Search Bar Section */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 40px 10px;
+  flex-wrap: wrap;
+  background-color: #f0f4f8;
+}
+
+.search-bar-container h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #1e3a8a;
+  font-family: "Segoe UI", sans-serif;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex-grow: 1;
+  min-width: 250px;
+  max-width: 600px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 40px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2d3748;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.active-link {
+  color: #fbbf24; /* Amber */
+}
+
+/* About Section */
+.about-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+}
+
+.about-text,
+.about-footer {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Contact Section */
+.contact-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #2d3748;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #4a5568;
+}
+
+/* Error Page */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.error-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.error-button {
+  background-color: #fbbf24;
+  color: #1e3a8a;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.error-button:hover {
+  background-color: #facc15;
+}
+
+/* Sticky Nav */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #1e3a8a, #3b57f6);
+  padding: 1rem 2rem;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: #facc15;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active-link::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active-link {
+  color: #facc15;
+}
+
+/* Book Details Page  */
+/* Book Detail Container */
+.bd-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 2rem;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Book Image */
+.bd-image {
+  padding: 10px;
+  flex: 1;
+  max-width: 300px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 165, 0, 0.2);
+  object-fit: contain;
+  aspect-ratio: 2 / 3;
+}
+
+/* Book Info Section */
+.bd-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Book Title */
+.bd-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6f00;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Author Text */
+.bd-author {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Description Text */
+.bd-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Info Grid */
+.bd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.bd-item {
+  background-color: #fff7f0;
+  padding: 0.8rem;
+  border-left: 5px solid #ff6f00;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Price Tag */
+.bd-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e65100;
+  margin-top: 1rem;
+}
+
+/* Stock Info */
+.bd-stock {
+  font-weight: 600;
+  color: #388e3c;
+}
+
+.bd-out {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+/* Button Flex Container */
+.bd-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* Responsive */
+}
+
+/* Buy Now Button */
+.bd-button {
+  background-color: #ff6f00;
+  width: 120px;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.bd-button:hover {
+  background-color: #e65100;
+}
+
+/* Add to Cart Button */
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #388e3c;
+}
+
+.add-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
